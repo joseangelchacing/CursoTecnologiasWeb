@@ -55,6 +55,37 @@
             <path d="M691.7 526h158.4v52.8H691.7z" fill="#333333"></path>
         </g>
     </svg>
+
+    <hr>
+    <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Fondo (Césped) -->
+        <rect x="0" y="150" width="400" height="150" fill="green" />
+
+        <!-- Portería -->
+        <rect x="120" y="30" width="160" height="100" stroke="black" stroke-width="4" fill="none" />
+
+        <!-- Malla de la portería -->
+        <pattern id="net" width="10" height="10" patternUnits="userSpaceOnUse">
+            <path d="M10 0 L0 10" stroke="gray" stroke-width="1" />
+            <path d="M0 0 L10 10" stroke="gray" stroke-width="1" />
+        </pattern>
+        <rect x="120" y="30" width="160" height="100" fill="url(#net)" />
+
+        <!-- Pelota de fútbol -->
+        <circle cx="200" cy="260" r="20" fill="white" stroke="black" stroke-width="2" />
+        <pattern id="soccerBall" width="8" height="8" patternUnits="userSpaceOnUse">
+            <circle cx="4" cy="4" r="3" fill="black" />
+        </pattern>
+        <circle cx="200" cy="260" r="20" fill="url(#soccerBall)" stroke="black" stroke-width="2">
+            <!-- Animación: trayectoria curva hacia la escuadra -->
+            <animate attributeName="cx" values="200; 220; 230; 240; 250; 270; 290" dur="2s" repeatCount="indefinite" />
+            <animate attributeName="cy" values="260; 220; 180; 140; 100; 70; 50" dur="2s" repeatCount="indefinite" />
+        </circle>
+    </svg>
+
+
+
+
 </body>
 
 </html>
