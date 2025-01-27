@@ -4,35 +4,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario Bonito</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f7fc;
+            font-family: 'Arial', sans-serif;
+        }
+
+        form {
+            width: 100%;
+            max-width: 400px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 15px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #5283d7;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        label {
+            color: #333;
+            margin-bottom: 4px;
+            display: block;
+            font-size: 0.9em;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.9em;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .genero-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        button[type="submit"] {
+            background-color: #5283d7;
+            color: white;
+            padding: 8px 15px;
+            font-size: 1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+
+
+        input:valid {
+            border: 1px solid #4caf50;
+        }
+
+        input:required:not(:valid),
+        textarea:required:not(:valid) {
+            border-color: #ccc;
+        }
+    </style>
 </head>
 
 <body>
-    <form style="width: 25%;">
+    <form action="#" method="get">
         <fieldset>
-            <legend>Información Personal</legend><br>
-            <label for="nombre">Nombre</label><br>
+            <legend>Información Personal</legend>
+            <label for="nombre">Nombre</label>
             <input type="text" name="nombre" id="nombre" required><br>
-            <label for="apellido">Apellido</label><br>
-            <input type="text" name="apellido" inputmode="apellido" required><br>
-            <label for="fecha">Fecha de Nacimiento</label><br>
+            <label for="apellido">Apellido</label>
+            <input type="text" name="apellido" id="apellido" required><br>
+            <label for="fecha">Fecha de Nacimiento</label>
             <input type="date" name="fecha" id="fecha" required><br>
             <label for="genero">Género</label><br>
-            <label for="masculino">Masculino</label>
-            <input type="radio" name="genero" id="masculino" value="masculino" required>
-            <label for="femenino">Femenino</label>
-            <input type="radio" name="genero" id="femenino" value="femenino" required>
+            <div class="genero-container">
+                <label for="masculino">Masculino</label>
+                <input type="radio" name="genero" id="masculino" value="masculino" required>
+                <label for="femenino">Femenino</label>
+                <input type="radio" name="genero" id="femenino" value="femenino" required>
+            </div>
         </fieldset>
-        <br>
         <fieldset>
             <legend>Información de Contacto</legend>
-            <label for="email">Correo electrónico</label><br>
+            <label for="email">Correo electrónico</label>
             <input type="email" name="email" id="email" required><br>
-            <label for="telefono">Teléfono</label><br>
+            <label for="telefono">Teléfono</label>
             <input type="tel" name="telefono" id="telefono" required><br>
-            <label for="direccion">Dirección</label><br>
-            <textarea name="direccion" id="direccion" required cols="40" rows="2"
-                style="resize: none; overflow: hidden;"></textarea>
+            <label for="direccion">Dirección</label>
+            <textarea name="direccion" id="direccion" required></textarea><br><br>
+            <button type="submit">Enviar</button>
         </fieldset>
     </form>
 </body>
