@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background-color: #e6e9ef;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilo para cada elemento (imagen, video, audio, iframe, canvas, svg) */
+        img,
+        video,
+        audio,
+        iframe,
+        canvas,
+        svg {
+            width: 60%;
+            /* Ajusta el tamaño a un porcentaje de la pantalla */
+            max-width: 640px;
+            /* Limita el tamaño máximo */
+            margin-bottom: 20px;
+            /* Espacio entre cada elemento */
+            border-radius: 10px;
+            /* Bordes redondeados para un toque suave */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Sombra sutil para mejorar la estética */
+        }
+
+        iframe {
+            height: 400px;
+            /* Establece una altura para los iframes */
+        }
+
+        video {
+            border: 2px solid #ddd;
+            height: auto;
+            /* Añade borde a los videos */
+        }
+
+        canvas {
+            background-color: #e0e0e0;
+            /* Color de fondo para el canvas */
+        }
+
+        svg {
+            background-color: #f0f0f0;
+            /* Color de fondo para el SVG */
+        }
+
+        /* Estilo básico para el SVG */
+        svg {
+            background-color: white;
+            /* Fondo blanco */
+            display: block;
+            margin: 50px auto;
+        }
+
+        /* Animación para mover el rectángulo alrededor */
+        @keyframes mover {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            25% {
+                transform: translate(300px, 0);
+            }
+
+            50% {
+                transform: translate(300px, 100px);
+            }
+
+            75% {
+                transform: translate(0, 100px);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        /* Aplicar la animación al rectángulo */
+        rect {
+            animation: mover 5s linear infinite, cambiarColor 2s ease-in-out infinite alternate;
+        }
+
+        /* Animación para cambiar el color del rectángulo */
+        @keyframes cambiarColor {
+            0% {
+                fill: blue;
+            }
+
+            50% {
+                fill: red;
+            }
+
+            100% {
+                fill: green;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <br><br><br><br><br><br>
+    <!-- Incrustación de una imagen -->
+    <h3>IMAGEN</h3>
+    <img src="images/imagen.jpg" alt="Imagen">
+
+    <!-- Incrustación de un video -->
+    <h3>VIDEO</h3>
+    <video src="images/video.mp4" controls></video>
+
+    <!-- Incrustación de un audio -->
+    <h3>AUDIO</h3>
+    <audio src="images/audio.mp3" controls></audio>
+
+    <!-- Incrustación de una página web externa -->
+    <h3>IFRAME</h3>
+    <iframe src="https://play.famobi.com/color-fill-3d"></iframe>
+
+    <!-- Incrustación de un lienzo para dibujar gráficos -->
+    <h3>CANVAS</h3>
+    <canvas id="miCanvas" width="auto" height="auto"></canvas>
+    <script>
+        var canvas = document.getElementById("miCanvas");
+        var ctx = canvas.getContext("2d");
+        var x = 50;
+        var y = 50;
+        var dx = 2;
+        var dy = 2;
+
+        function drawBall() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);  // Limpia el canvas
+            ctx.beginPath();
+            ctx.arc(x, y, 20, 0, Math.PI * 2);
+            ctx.fillStyle = "#0095DD";
+            ctx.fill();
+            ctx.closePath();
+
+            x += dx;
+            y += dy;
+
+            if (x + dx > canvas.width || x + dx < 0) {
+                dx = -dx;
+            }
+            if (y + dy > canvas.height || y + dy < 0) {
+                dy = -dy;
+            }
+        }
+
+        setInterval(drawBall, 10);
+    </script>
+
+    <!-- Incrustación de gráficos vectoriales escalables -->
+    <h3>SVG</h3>
+    <svg width="400" height="180">
+        <rect x="50" y="20" width="300" height="100" style="fill:blue" />
+    </svg>
+
+
+</body>
+
+</html>
