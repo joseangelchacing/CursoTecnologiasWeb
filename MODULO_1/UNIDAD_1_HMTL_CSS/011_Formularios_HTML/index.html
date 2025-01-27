@@ -88,12 +88,11 @@
         }
 
         textarea {
-            height: 100px;
             resize: none;
             font-family: 'Arial', sans-serif;
-            /* La fuente que te gusta para el textarea */
-            height: 100px;
             resize: none;
+            height: 50px;
+            overflow: hidden;
         }
 
 
@@ -133,7 +132,7 @@
             <label for="telefono">Teléfono</label>
             <input type="tel" name="telefono" id="telefono" required><br>
             <label for="direccion">Dirección</label>
-            <textarea name="direccion" id="direccion" required></textarea><br><br>
+            <textarea name="direccion" id="direccion" maxlength="90" required></textarea><br><br>
             <button type="submit">Enviar</button>
         </fieldset>
     </form>
