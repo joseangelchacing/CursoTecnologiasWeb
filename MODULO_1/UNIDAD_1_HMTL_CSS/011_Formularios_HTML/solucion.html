@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form style="width: 25%;">
+        <fieldset>
+            <legend>Información Personal</legend><br>
+            <label for="nombre">Nombre</label><br>
+            <input type="text" name="nombre" id="nombre" required><br>
+            <label for="apellido">Apellido</label><br>
+            <input type="text" name="apellido" inputmode="apellido" required><br>
+            <label for="fecha">Fecha de Nacimiento</label><br>
+            <input type="date" name="fecha" id="fecha" required><br>
+            <label for="genero">Género</label><br>
+            <label for="masculino">Masculino</label>
+            <input type="radio" name="genero" id="masculino" value="masculino" required>
+            <label for="femenino">Femenino</label>
+            <input type="radio" name="genero" id="femenino" value="femenino" required>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Información de Contacto</legend>
+            <label for="email">Correo electrónico</label><br>
+            <input type="email" name="email" id="email" required><br>
+            <label for="telefono">Teléfono</label><br>
+            <input type="tel" name="telefono" id="telefono" required><br>
+            <label for="direccion">Dirección</label><br>
+            <textarea name="direccion" id="direccion" required cols="40" rows="1"></textarea>
+        </fieldset>
+    </form>
+</body>
+
+</html>
