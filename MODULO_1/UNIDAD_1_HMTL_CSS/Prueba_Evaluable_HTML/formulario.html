@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario</title>
+</head>
+
+<body>
+  <h1>Formulario de inscripción</h1>
+  <form action="recibir.html" method="get">
+    <table width="100%">
+      <tr>
+        <td width="30%"><label for="nombre">Nombre:</label></td>
+        <td><input type="text" id="nombre" name="nombre" required></td>
+      </tr>
+      <tr>
+        <td><label for="email">Email:</label></td>
+        <td><input type="email" id="email" name="email" required></td>
+      </tr>
+      <tr>
+        <td><label for="fecha_nacimiento">Fecha de nacimiento:</label></td>
+        <td><input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required></td>
+      </tr>
+      <tr>
+        <td><label for="cursos">Cursos:</label></td>
+        <td>
+          <input type="checkbox" id="python" name="cursos" value="Python">
+          <label for="python">Python</label><br>
+          <input type="checkbox" id="php" name="cursos" value="PHP">
+          <label for="php">PHP</label><br>
+          <input type="checkbox" id="javascript" name="cursos" value="JavaScript">
+          <label for="javascript">JavaScript</label><br>
+          <input type="checkbox" id="c++" name="cursos" value="C++">
+          <label for="c++">C++</label>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="nivel_estudios">Nivel de estudios:</label></td>
+        <td>
+          <select id="nivel_estudios" name="nivel_estudios" required>
+            <option value="basico">Básico</option>
+            <option value="medio">Medio</option>
+            <option value="superior">Superior</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="nivel_ingles">Nivel de inglés:</label></td>
+        <td>
+          <input type="range" id="nivel_ingles" name="nivel_ingles" min="0" max="10">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align: center;">
+          <button type="submit">Enviar</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+
+</html>

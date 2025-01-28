@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Evaluable HTML</title>
+    <style>
+        body {
+
+            font-family: arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            margin: auto;
+
+            table {
+                border-collapse: collapse;
+                width: 500px;
+            }
+
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 6px;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+
+
+        input,
+        select {
+            width: 100%;
+            box-sizing: border-box;
+
+        }
+
+        button {
+            width: 100%;
+            font-size: 1.4rem;
+            padding: 5px;
+            cursor: pointer;
+            background-color: #e4eaee;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #007BFF;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align: center;">Prueba HTML</h2><br>
+    <form action="recibir.html" method="get">
+        <table style="background-color: rgb(238, 240, 245);">
+            <tr>
+                <th colspan="2" style="text-align: center;">Formulario</th>
+            </tr>
+            <tr>
+                <th>Nombre*</th>
+                <td colspan="2">
+                    <input type="text" placeholder="Tu nombre" required>
+                </td>
+            </tr>
+            <tr>
+                <th>Email*</th>
+                <td>
+                    <input type="email" name="email" id="email" placeholder="Tu correo electrónico" required>
+                </td>
+            </tr>
+            <tr>
+                <th>Fecha de nacimiento</th>
+                <td>
+                    <input type="date" style="font-family: arial, sans-serif ;">
+                </td>
+            </tr>
+            <tr>
+                <th>Cursos aprovados</th>
+                <td style="font-size: 0.8rem;">
+                    <label for="phyton">Python</label>
+                    <input type="checkbox" name="phyton" value="phyton">
+                    <label for="php">PHP</label><input type="checkbox" name="php" value="php">
+                    <label for="javascrip">JavaScript</label><input type="checkbox" name="javascript"
+                        value="javascript">
+                    <label for="c++">C++</label><input type="checkbox" name="c++" value="c++">
+                </td>
+            </tr>
+            <tr>
+                <th>Nivel de Estudios</th>
+                <td>
+                    <select name="opcion">
+                        <option value="basico">Básico</option>
+                        <option value="medio">Medio</option>
+                        <option value="superior">Superior</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Nivel de Inglés</th>
+                <td style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+                    <span>0</span><input type="range" id="ingles" name="ingles" min="0" max="100"><span>100</span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="font-size: 0.8rem;">
+                    <b>* campos obligatorios</b>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button type="submit">Enviar</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
