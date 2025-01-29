@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-family: "Josefin Sans", serif;
 }
-
 .cta-container {
     background-image: url('https://cdn.pixabay.com/photo/2022/09/05/16/17/baltic-sea-7434540_640.jpg');
     background-size: cover;
@@ -25,6 +27,19 @@ body {
     max-width: 100%;
 }
 
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(20px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
 .cta-button {
     margin: 1.2rem;
     padding: 0.5rem;
@@ -39,9 +54,28 @@ body {
     box-shadow:
             4px 4px 6px rgba(0, 0, 0, 0.9),
             2px 2px 3px rgba(0, 0, 0, 0.5);
+    animation: move 1.5s infinite ease-in-out;
+    }
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .cta-button:hover {
     background-color: rgb(155, 119, 217);
-
+    cursor: pointer;
+    animation: pulse 1s infinite ease-in-out;
 }
+
+
