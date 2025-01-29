@@ -8,7 +8,7 @@ body {
     background-image: url('https://cdn.pixabay.com/photo/2022/09/05/16/17/baltic-sea-7434540_640.jpg');
     background-size: cover;
     background-position: center;
-    height: 40vh;
+    height: 100vh;
     text-align: center;
     color: rgb(222, 222, 222);
     padding: 60px;
@@ -44,8 +44,4 @@ body {
 .cta-button:hover {
     background-color: rgb(155, 119, 217);
 
-}
-
-p {
-    font-size: 5rem;
 }
