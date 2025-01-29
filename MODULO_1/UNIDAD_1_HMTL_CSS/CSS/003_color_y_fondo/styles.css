@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.cta-container {
+    background-image: url('https://cdn.pixabay.com/photo/2022/09/05/16/17/baltic-sea-7434540_640.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    text-align: center;
+    color: rgb(222, 222, 222);
+    padding: 60px;
+
+}
+
+.cta-text {
+    font-weight: bold;
+    word-wrap: break-word;
+    font-size: 28px;
+    color: white;
+    -webkit-text-stroke: 0.1px rgb(10, 10, 60);
+    text-shadow: 1px 1px 1px rgb(10, 10, 60);
+    max-width: 100%;
+}
+
+.cta-button {
+    margin: 1.2rem;
+    padding: 0.5rem;
+    background-color: #626bb2;
+    color: white;  
+    padding-inline: 30px;
+    padding-block: 15px; 
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    box-shadow:
+            4px 4px 6px rgba(0, 0, 0, 0.9),
+            2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button:hover {
+    background-color: rgb(155, 119, 217);
+
+}
+
+p {
+    font-size: 5rem;
+}
