@@ -1,0 +1,38 @@
+/* Pseudo Elementos */
+
+button {
+    color: white;
+    padding: 10px;
+    background-color: rgb(16, 16, 76);
+    border: 5px solid rgba(117, 127, 211, 0.694);
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+button::first-letter {
+    color: green;
+}
+
+button:hover {
+    color: brown;
+}
+
+button:hover::before {
+    content: "¡Haz click! ";
+}
+
+button:focus::after {
+    content: ". Ya haz visitado este recurso";
+}
+
+p::selection {
+    color: red; 
+    text-decoration: line-through;
+    
+}
+
+p.parrafo::first-line {
+    color: green;
+    font-weight: 600;
+}
+
