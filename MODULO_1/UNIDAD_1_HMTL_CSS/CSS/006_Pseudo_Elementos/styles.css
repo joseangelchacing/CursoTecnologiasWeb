@@ -23,6 +23,7 @@ button:hover::before {
 
 button:focus::after {
     content: ". Ya haz visitado este recurso";
+    color: white;
 }
 
 p::selection {
