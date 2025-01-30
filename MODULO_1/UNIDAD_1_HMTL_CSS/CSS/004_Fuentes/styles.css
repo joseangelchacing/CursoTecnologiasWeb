@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin: 0;font-family: "Poppins", serif;
+}
+
+.cta-container {
+    background-image: url('https://cdn.pixabay.com/photo/2022/09/05/16/17/baltic-sea-7434540_640.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    text-align: center;
+    color: rgb(222, 222, 222);
+    padding: 60px;
+
+}
+
+.cta-text {
+    font-weight: bold;
+    word-wrap: break-word;
+    font-size: 28px;
+    color: white;
+    -webkit-text-stroke: 0.1px rgb(10, 10, 60);
+    text-shadow: 1px 1px 1px rgb(10, 10, 60);
+    max-width: 100%;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(20px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.cta-button {
+    margin: 1.2rem;
+    padding: 0.5rem;
+    background-color: #626bb2;
+    color: white;
+    padding-inline: 30px;
+    padding-block: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    box-shadow:
+        4px 4px 6px rgba(0, 0, 0, 0.9),
+        2px 2px 3px rgba(0, 0, 0, 0.5);
+    animation: move 1.5s infinite ease-in-out;
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.cta-button:hover {
+    background-color: rgb(155, 119, 217);
+    cursor: pointer;
+    animation: pulse 1s infinite ease-in-out;
+}
