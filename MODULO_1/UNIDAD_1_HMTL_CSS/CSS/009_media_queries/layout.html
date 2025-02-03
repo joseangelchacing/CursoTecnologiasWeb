@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+        body {
+            margin: 0;
+            height: 100%;
+            font-family: "Lato", serif;
+            background-color: antiquewhite;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            width: 100vw;
+            height: 15vh;
+            background-color: darkseagreen;
+        }
+
+        .titulo_pagina {
+            margin: 10px;
+        }
+
+        #logo {
+            width: 80px;
+            margin: 20px;
+            padding-left: 10px;
+        }
+
+        footer {
+            width: 100vw;
+            height: 100px;
+            background-color: rgb(12, 20, 12);
+            clear: both;
+            color: white;
+
+            transition: height 0.5s ease, background-color 0.5s ease;
+        }
+
+        nav {
+            width: 100vw;
+            height: 10vh;
+            background-color: rgb(143, 152, 188);
+            display: flex;
+            align-items: center;
+            justify-content: baseline;
+        }
+
+        nav a {
+            text-decoration: solid;
+            color: white;
+            font-size: larger;
+            padding-left: 20px;
+        }
+
+        .welcome_gif {
+            width: 200px;
+        }
+
+
+        main {
+            display: flex;
+            flex-direction: row;
+            width: 100vw;
+        }
+
+        section {
+            width: 80vw;
+            background-color: antiquewhite;
+            min-height: 80vh;
+            text-align: center;
+        }
+
+        aside img {
+            height: 10vh;
+            border-radius: 25px;
+            margin: 15px;
+        }
+
+
+
+        aside {
+            display: flex;
+            flex-direction: column;
+            width: 20vw;
+            background-color: rgb(154, 233, 183);
+            min-height: 80vh;
+            float: left;
+            align-items: center;
+            transition: width 0.5s ease, background-color 0.5s ease, padding 0.5s ease;
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 1025px) and (min-width: 481px) {
+            main {
+                flex-direction: column;
+            }
+
+            section {
+                width: 100vw;
+                background-color: antiquewhite;
+                min-height: 60vh;
+            }
+
+            aside {
+                flex-direction: row;
+                width: 100vw;
+                background-color: rgb(140, 220, 160);
+                min-height: 10vh;
+                align-items: center;
+                justify-content: center;
+                animation: slideInFromLeft 1s ease-out;
+            }
+        }
+
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+
+            70% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 480px) {
+            main {
+                flex-direction: column;
+            }
+
+            section {
+                width: 100vw;
+                background-color: antiquewhite;
+                min-height: 60vh;
+            }
+
+            aside {
+                flex-direction: row;
+                width: 100vw;
+                background-color: rgb(154, 233, 183);
+                min-height: 10vh;
+                align-items: center;
+                justify-content: center;
+            }
+
+            footer {
+                height: 80px;
+                background-color: rgb(20, 30, 20);
+
+                animation: bounceIn 0.7s ease-out;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img id="logo" src="https://cdn.pixabay.com/photo/2012/04/26/14/04/car-42552_640.png">
+        <h1 class="titulo_pagina">Inicio</h1>
+    </header>
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Nosotros</a>
+        <a href="#">Contacto</a>
+    </nav>
+    <main>
+        <section>
+            <h2>
+                Bienvenido!
+            </h2>
+            Navega por nuestra web<br>
+            <img src="https://cdn.pixabay.com/animation/2023/12/27/01/30/01-30-08-198_512.gif" class="welcome_gif">
+        </section>
+        <aside>
+            <img src="https://cdn.pixabay.com/photo/2015/05/17/10/51/facebook-770688_640.png">
+            <img src="https://cdn.pixabay.com/photo/2016/05/01/23/20/twitter-bird-1366218_640.png">
+            <img src="https://cdn.pixabay.com/photo/2016/08/27/03/07/whatsapp-1623579_640.png">
+        </aside>
+    </main>
+
+    <footer>
+        <div style="padding-top: 10px; text-align: center;">&copy; 2024 - Curso Nascor</div>
+    </footer>
+</body>
+
+</html>

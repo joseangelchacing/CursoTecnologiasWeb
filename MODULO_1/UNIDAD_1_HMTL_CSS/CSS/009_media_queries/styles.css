@@ -1,0 +1,203 @@
+/* Reset básico */
+body, h1, p, button {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4f8;
+}
+
+/* Contenedor flex */
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Imagen de perfil */
+.profile-image img {
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    width:120px;
+    height: 120px;
+}
+
+/* Información del perfil */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-name {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.profile-description {
+    color: rgb(100, 100, 100);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.profile-button {
+    background-color: hsl(220, 90%, 56%);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.profile-button:hover {
+    background-color: hsl(220, 90%, 46%);
+}
+
+/* Media Queries */
+
+/* Móviles (Vertical) */
+@media (max-width: 480px) {
+    .profile-card {
+        background-color: #f2645c; /* Rojo */
+    }
+    .profile-name {
+        font-size: 1.2rem;
+    }
+    .profile-description {
+        font-size: 0.8rem;
+    }
+    .profile-button {
+        background-color: #76f5e0; /* Turquesa */
+    }
+}
+
+/* Móviles (Horizontal) */
+@media (min-width: 481px) and (max-width: 767px) {
+    .profile-card {
+        background-color: #64f4ec; /* Turquesa */
+        flex-direction: row;
+        text-align: left;
+    }
+    .profile-image {
+        margin-right: 1rem;
+    }
+    .profile-info {
+        align-items: flex-start;
+    }
+    .profile-description {
+        color:white;
+    }
+    .profile-button {
+        background-color: #ddf590; /* Amarillo */
+    }
+}
+
+/* Tabletas (Vertical) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .profile-card {
+        background-color: #eeea80; /* Amarillo */
+    }
+    .profile-name {
+        font-size: 2rem;
+    }
+    .profile-description {
+        font-size: 1.2rem;
+    }
+    .profile-button {
+        background-color: #ef6565; /* Rojo */
+    }
+}
+
+/* Tabletas (Horizontal) */
+@media (min-width: 1025px) and (max-width: 1279px) {
+    .profile-card {
+        background-color: #3b2be7; /* Azul oscuro */
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+    .profile-image {
+        margin-right: 2rem;
+    }
+    .profile-info {
+        align-items: flex-start;
+    }
+    .profile-button {
+        background-color: #f34251; /* Rojo */
+    }
+    .profile-description {
+        color: white;  /*parrafo blanco*/
+    }
+
+    .profile-name {
+        color: white; /*Nombre de usuario blanco*/
+    }
+}
+
+/* Desktops */
+@media (min-width: 1280px) and (max-width: 1919px) {
+    .profile-card {
+        background-color: #86f1da; /* Turquesa */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .profile-name {
+        font-size: 2.5rem;
+    }
+    .profile-description {
+        font-size: 1.5rem;
+    }
+    .profile-button {
+        background-color: #eae87a; /* Amarillo */
+    }
+}
+
+/* Desktops Muy Grandes */
+@media (min-width: 1920px) {
+    .profile-card {
+        background-color: #f3f583; /* Amarillo */
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+    }
+    .profile-image {
+        margin-right: 2rem;
+    }
+    .profile-info {
+        align-items: flex-start;
+    }
+    .profile-button {
+        background-color: #303de6; /* Azul oscuro */
+    }
+    .profile-description{
+        color: white;  /*Texto del párrafo blanco */
+    }
+}
+
+/* Retina */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .profile-card {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .profile-button {
+        border: 2px solid #fff;
+    }
+}
