@@ -148,8 +148,7 @@ input {
 }
 
 input:focus{
-    border-color:white;
-    outline: blue;    
+    border-color:white;   
 }
 
 
