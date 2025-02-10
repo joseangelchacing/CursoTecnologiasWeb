@@ -13,15 +13,22 @@
         var numeroEntero = 5;
         var numeroDecimal = 3.14;
         var numeroNegativo = -10;
+        var texto = "palabra";
+
         console.log("Número Entero:", numeroEntero, ". Tipo:", typeof numeroEntero); //ejercicio 003(b)
         console.log("Número Decimal:", numeroDecimal, ". Tipo:", typeof numeroDecimal);
         console.log("Número Negativo:", numeroNegativo, ". Tipo:", typeof numeroNegativo);
+        console.log("%cCadena de texto:", "background:black", texto, ". Tipo:", typeof texto);
 
         console.log("%c------------------------------------------", "color:orange");
 
         //ejercicio 003(c)
         let alumno = { nombre: 'Andrea', edad: 30 };
         let frutas = ['manzana', 'naranja', 'plátano'];
+        let alumnosArray = [
+            { nombre: 'Carlos', edad: 40 },
+            { nombre: 'Ana', edad: 34 }
+        ];
 
         let nombre = alumno.nombre;
         let edad = alumno.edad;
@@ -31,10 +38,24 @@
         let fruta3 = frutas[2];
 
         console.log("OBJETO: Nombre: " + nombre + ". Edad: " + edad);
-        console.log("ARRAY DE FRUTAS: " + fruta1, fruta2, fruta3);
+        console.log(`ARRAY DE FRUTAS: ${fruta1}, ${fruta2} y ${fruta3}.`);
+        console.log(`ARRAY DE OBJETOS: ${alumnosArray[0].nombre} tiene ${alumnosArray[0].edad} años. \nMientras que ${alumnosArray[1].nombre} tiene ${alumnosArray[1].edad} años de edad.`);
 
-        console.log("%c------------------------------------------", "color:orange");
+        console.log("%c------------------------------------------", "color:orange;");
+
+        let str = `
+        <ul>
+            <li>Alumno: ${alumnosArray[0].nombre}</li>
+            <li>Edad: ${alumnosArray[0].edad}</li>
+            <li>Estudiante de programación</li>
+        </ul>
+        `
+        document.write(str);
+        console.log("%c" + str, "color:green");
     </script>
+
+
+
 </body>
 
 </html>
