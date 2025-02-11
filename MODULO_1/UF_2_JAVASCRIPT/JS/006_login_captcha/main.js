@@ -1,8 +1,9 @@
 let num = parseInt(prompt("¿Resultado de 9 + 5?"))
 
 if (num != 14) {
-    alert("Error")
-    windows.location.reload()
+    alert(num + " no es correcto. Vuelve a intentarlo");
+    windows.location.reload();
 } else {
-    document.write("Bienvenido")
+    alert('Correcto!');
+    document.write("Bienvenido");
 }
