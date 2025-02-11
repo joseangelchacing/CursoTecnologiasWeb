@@ -4,7 +4,6 @@ if (num === 14) {
     alert('Correcto!');
     document.write("Bienvenido");
     
-    
 } else if (isNaN(num)) {
     alert("Introduce un NÚMERO");
    
