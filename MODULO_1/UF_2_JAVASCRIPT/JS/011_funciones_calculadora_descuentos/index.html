@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Descuento</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            margin: 10px 10px;
+            padding: 10px;
+            width: 70%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Calculadora de Descuento</h2>
+        <form id="formulario">
+            <input type="number" id="price" placeholder="Precio del producto" required>
+            <input type="number" id="discount" placeholder="Descuento (%)" required>
+            <button type="button" id="calcular">Calcular</button>
+        </form>
+        <h3 id="resultado"></h3>
+    </div>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
