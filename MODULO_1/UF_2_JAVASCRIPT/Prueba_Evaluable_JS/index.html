@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Evaluable JS</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #c8d3e0;
+        }
+
+        .card_notas {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 300px;
+        }
+
+        .card_resultados {
+            margin-top: 30px;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 300px;
+            display: none;
+        }
+
+        .tabla_resultados {
+            border: 2px solid black;
+            margin-top: 10px;
+            border-radius: 15px;
+            padding: 10px;
+            background: white;
+            text-align: center;
+            width: 280px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            text-align: center;
+            border: none;
+            padding: 5px;
+        }
+
+        th {
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #0c74e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: blue;
+        }
+
+        .error {
+            border: 2px solid red;
+        }
+
+        .SUSPENDIDO {
+            color: red;
+            background-color: rgb(44, 3, 3);
+        }
+
+        .SUFICIENTE {
+            color: orange;
+            background-color: rgb(132, 94, 24);
+
+        }
+
+        .BIEN {
+            color: rgb(91, 143, 39);
+            background-color: rgb(191, 223, 110);
+
+        }
+
+        .NOTABLE {
+            color: green;
+            background-color: rgb(131, 211, 131);
+
+        }
+
+        .SOBRESALIENTE {
+            color: blue;
+            background-color: rgb(250, 217, 31);
+        }
+
+        #notafinal {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.6rem;
+        }
+
+        .media {
+            font-size: 1.3rem;
+            font-weight: bold;
+            background-color: rgb(231, 237, 241);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card_notas" id="card">
+        <h2>Promedio de Notas</h2>
+        <input type="text" id="nombre" placeholder="Nombre del Alumno">
+        <input type="number" id="nota1" placeholder="Nota 1">
+        <input type="number" id="nota2" placeholder="Nota 2">
+        <input type="number" id="nota3" placeholder="Nota 3">
+        <input type="number" id="nota4" placeholder="Nota 4">
+        <input type="number" id="nota5" placeholder="Nota 5">
+        <button onclick="calcularNota()">Calcular</button>
+    </div>
+    <div class="card_resultados" id="card_resultados">
+
+        <table id="tabla_resultados" class="tabla_resultados">
+
+        </table>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
