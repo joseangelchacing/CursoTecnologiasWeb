@@ -9,6 +9,7 @@
 
 <body>
     <script>
+        //creamos el objeto persona.
         let persona = {
             nombre: "Juan", apellido: "Nadie",
             edad: 50,
@@ -20,26 +21,39 @@
             altura: 1.80
         };
 
+        //imprimimos los datos del objeto.
         for (const x in persona) {
             if (x === "ojosColor") {
                 document.body.innerHTML = `${document.body.innerHTML}Color de ojos:<br>`;
                 document.body.innerHTML = `${document.body.innerHTML}&nbsp&nbsp&nbsp&nbsp&nbsp-izquierdo:${persona[x].izquierdo}<br>`;
                 document.body.innerHTML = `${document.body.innerHTML}&nbsp&nbsp&nbsp&nbsp&nbsp-derecho:${persona[x].derecho}<br>`;
             } else {
-
                 document.body.innerHTML = `${document.body.innerHTML}${x}:${persona[x]}<br>`;
             }
         }
 
+        //texto donde concatenamos datos del objeto persona.
         document.write(`<hr>Hola ${persona.nombre} ${persona.apellido}, tu edad es de ${persona.edad} años y mides ${persona.altura}m.<br>Eres como David Bowie porque tienes el ojo izquiero ${persona.ojosColor.izquierdo} y el derecho ${persona.ojosColor.derecho}.<br>Bienvenido!!<hr>`)
 
+        //cambiamos parametros del objeto.
         persona.ojosColor.izquierdo = "rojo";
         persona.ojosColor.derecho = "rojo también";
         persona.nombre = "Pedro"
         persona.apellido = "Sanchez"
 
-        document.write(`Ahora te llamas ${persona.nombre} ${persona.apellido}.<br>Tus ojos ahora son ${persona.ojosColor.izquierdo} el izquierdo y el otro ${persona.ojosColor.derecho}. Felicidades`)
+        //texto concatenando datos del objeto ya modificados.
+        document.write(`Ahora te llamas ${persona.nombre} ${persona.apellido}.<br>Tus ojos ahora son ${persona.ojosColor.izquierdo} el izquierdo y el otro ${persona.ojosColor.derecho}. Felicidades!<hr>`)
 
+        //vovlemos a imprimir todos los datos del objetjo persona.
+        for (const x in persona) {
+            if (x === "ojosColor") {
+                document.body.innerHTML = `${document.body.innerHTML}Color de ojos:<br>`;
+                document.body.innerHTML = `${document.body.innerHTML}&nbsp&nbsp&nbsp&nbsp&nbsp-izquierdo:${persona[x].izquierdo}<br>`;
+                document.body.innerHTML = `${document.body.innerHTML}&nbsp&nbsp&nbsp&nbsp&nbsp-derecho:${persona[x].derecho}<br>`;
+            } else {
+                document.body.innerHTML = `${document.body.innerHTML}${x}:${persona[x]}<br>`;
+            }
+        }
 
     </script>
 </body>

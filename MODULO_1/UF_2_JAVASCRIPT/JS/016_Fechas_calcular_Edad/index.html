@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Edad</title>
+</head>
+
+<body>
+    <script>
+        //pedimos fecha de nacimiento al usuario.
+        let fechaNacimiento = prompt("Introduce tu fecha de nacimiento");
+        fechaNacimiento = new Date(fechaNacimiento);
+        document.write(fechaNacimiento)
+        document.write(`<br>`);
+
+        //obtenemos fecha de hoy
+        let fechaActual = new Date();
+        document.write(fechaActual);
+        document.write(`<br>`);
+
+        //calculamos la diferencia de años.
+        let edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+
+        //obtenemos mes y dia de cumpleaños.
+        let mesNacimiento = fechaNacimiento.getMonth();
+        let diaNacimiento = fechaNacimiento.getDate();
+
+        //obtenemos mes y dia actual.
+        let mesActual = fechaActual.getMonth();
+        let diaActual = fechaActual.getDate();
+
+        //si aun no ha cumplido este año. restamos un año a la edad.
+        if (mesActual < mesNacimiento || (mesActual === mesNacimiento && diaActual < diaNacimiento)) {
+            edad--;
+        }
+
+        //escribimos la edad del usuario.
+        document.write(edad)
+
+    </script>
+</body>
+
+</html>
