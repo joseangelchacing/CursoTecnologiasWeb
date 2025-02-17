@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Persona</title>
+</head>
+
+<body>
+    <script>
+        let persona = {
+            nombre: "Juan", apellido: "Nadie",
+            edad: 50,
+            ojosColor:
+            {
+                izquierdo: "verde",
+                derecho: "azul"
+            },
+            altura: 1.80
+        };
+
+        for (const x in persona) {
+            if (x === "ojosColor") {
+                document.body.innerHTML = `${document.body.innerHTML}Color de ojos:<br>`;
+                document.body.innerHTML = `${document.body.innerHTML}&nbsp&nbsp&nbsp&nbsp&nbsp-izquierdo:${persona[x].izquierdo}<br>`;
+                document.body.innerHTML = `${document.body.innerHTML}&nbsp&nbsp&nbsp&nbsp&nbsp-derecho:${persona[x].derecho}<br>`;
+            } else {
+
+                document.body.innerHTML = `${document.body.innerHTML}${x}:${persona[x]}<br>`;
+            }
+        }
+
+        document.write(`<hr>Hola ${persona.nombre} ${persona.apellido}, tu edad es de ${persona.edad} años y mides ${persona.altura}m.<br>Eres como David Bowie porque tienes el ojo izquiero ${persona.ojosColor.izquierdo} y el derecho ${persona.ojosColor.derecho}.<br>Bienvenido!!<hr>`)
+
+        persona.ojosColor.izquierdo = "rojo";
+        persona.ojosColor.derecho = "rojo también";
+        persona.nombre = "Pedro"
+        persona.apellido = "Sanchez"
+
+        document.write(`Ahora te llamas ${persona.nombre} ${persona.apellido}.<br>Tus ojos ahora son ${persona.ojosColor.izquierdo} el izquierdo y el otro ${persona.ojosColor.derecho}. Felicidades`)
+
+
+    </script>
+</body>
+
+</html>
