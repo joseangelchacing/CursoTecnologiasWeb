@@ -8,36 +8,88 @@
 </head>
 
 <body>
+    <h2>Calcula tu edad</h2>
+    <p id="edad"></p>
     <script>
-        //pedimos fecha de nacimiento al usuario.
-        let fechaNacimiento = prompt("Introduce tu fecha de nacimiento");
-        fechaNacimiento = new Date(fechaNacimiento);
-        document.write(fechaNacimiento)
-        document.write(`<br>`);
 
-        //obtenemos fecha de hoy
-        let fechaActual = new Date();
-        document.write(fechaActual);
-        document.write(`<br>`);
 
-        //calculamos la diferencia de años.
-        let edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
 
-        //obtenemos mes y dia de cumpleaños.
-        let mesNacimiento = fechaNacimiento.getMonth();
-        let diaNacimiento = fechaNacimiento.getDate();
+        //Función para validar la fecha en formato YYYY-MM-DD
+        function esFechaValida(fecha) {
 
-        //obtenemos mes y dia actual.
-        let mesActual = fechaActual.getMonth();
-        let diaActual = fechaActual.getDate();
-
-        //si aun no ha cumplido este año. restamos un año a la edad.
-        if (mesActual < mesNacimiento || (mesActual === mesNacimiento && diaActual < diaNacimiento)) {
-            edad--;
+            const regex = /^\d{4}-\d{2}-\d{2}$/;
+            if (!regex.test(fecha)) {
+                return false;
+            }
+            const date = new Date(fecha);
+            const timestamp = date.getTime();
+            if (typeof timestamp !== 'number' || Number.isNaN(timestamp)) {
+                return false;
+            }
+            const [year, month, day] = fecha.split('-');
+            if (date.getUTCFullYear() !== parseInt(year) ||
+                date.getUTCMonth() + 1 !== parseInt(month) ||
+                date.getUTCDate() !== parseInt(day)) {
+                return false;
+            }
+            return true;
         }
 
-        //escribimos la edad del usuario.
-        document.write(edad)
+
+        //Función para pedir fecha, validar e imprimir respuesta.
+        function pedirFecha() {
+            console.log("aqui si entra")
+            let fechaNacimiento = prompt("Introduce tu fecha de nacimiento en formato YYYY-MM-DD");
+
+            //llamamos al verificador de fecha
+            if (esFechaValida(fechaNacimiento)) {
+                console.log("fecha valida")
+
+                fechaNacimiento = new Date(fechaNacimiento);
+
+                //obtenemos fecha de hoy
+                let fechaActual = new Date();
+
+                //calculamos la diferencia de años.
+                let edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+
+                //obtenemos mes y dia de cumpleaños.
+                let mesNacimiento = fechaNacimiento.getMonth();
+                let diaNacimiento = fechaNacimiento.getDate();
+
+                //obtenemos mes y dia actual.
+                let mesActual = fechaActual.getMonth();
+                let diaActual = fechaActual.getDate();
+
+                //si aun no ha cumplido este año. restamos un año a la edad.
+                if (mesActual < mesNacimiento || (mesActual === mesNacimiento && diaActual < diaNacimiento)) {
+                    edad--;
+                }
+
+                //escribimos la edad del usuario (si eres menor de 30 te felicitan. mayor a 100 no mucho)
+                if (edad < 30) {    //si el usuario tiene menos de 30
+                    document.querySelector("#edad").innerHTML = `Felicidades, tienes ${edad} años.`;
+                }
+                else if (edad < 100) {  //si el usuario tiene entre 30 y 99 años.
+                    document.querySelector("#edad").innerHTML = `${edad}? tas viejo.`;
+                }
+                else {  //si el usuario tiene 100 años o más.
+                    document.querySelector("#edad").innerHTML = `váyase a dormir`;
+                };
+
+            } else { //si la fecha es inválida avisamos y volvemos a preguntar-validar.
+                alert("fecha inválida")
+                pedirFecha();
+            }
+        }
+
+        //Llamamos funcion para pedir fecha.
+        pedirFecha();
+
+
+
+
+
 
     </script>
 </body>
