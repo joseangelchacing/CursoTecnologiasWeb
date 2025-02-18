@@ -38,12 +38,10 @@
 
         //Función para pedir fecha, validar e imprimir respuesta.
         function pedirFecha() {
-            console.log("aqui si entra")
             let fechaNacimiento = prompt("Introduce tu fecha de nacimiento en formato YYYY-MM-DD");
 
             //llamamos al verificador de fecha
             if (esFechaValida(fechaNacimiento)) {
-                console.log("fecha valida")
 
                 fechaNacimiento = new Date(fechaNacimiento);
 
