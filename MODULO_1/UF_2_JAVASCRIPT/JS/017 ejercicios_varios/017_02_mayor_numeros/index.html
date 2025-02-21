@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar color</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #div {
+            width: 100vw;
+            height: 90vh;
+            font-size: 1rem;
+            text-align: center;
+            padding-top: 10vh;
+        }
+
+        button {
+            margin-top: 10vh;
+            height: 10vh;
+            width: 100vw;
+            background-color: black;
+            color: white;
+            font-size: 3rem;
+        }
+
+        button:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+            transition: transform 0.2s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div" style="background-color: rgb(207, 198, 233);">
+        <h1 id="h1">Ingresa dos números para ver cúal es el mayor</h1>
+        <form action="">
+            <label for="numero1">Número 1</label>
+            <input type="number" id="numero1">
+            <label for="numero2">Número 2</label>
+            <input type="number" id="numero2">
+            <button type="submit" id="botonComprobar">Comprobar</button>
+        </form>
+
+
+    </div>
+
+    <script>
+
+        let formulario = document.querySelector("form")
+
+
+        formulario.addEventListener("submit", function (event) {
+            event.preventDefault();
+            let h1 = document.getElementById("h1")
+            let numero1 = parseFloat(document.getElementById("numero1").value);
+            let numero2 = parseFloat(document.getElementById("numero2").value);
+
+            if (isNaN(numero1) || isNaN(numero2)) {
+                h1.innerHTML = "Por favor, introduce ambos números.";
+                return;
+            }
+
+            let boton = document.getElementById("botonComprobar")
+            if (numero1 == numero2) {
+                return h1.innerHTML = `has introducido dos número iguales (${numero1})`
+
+            } else {
+                let numeroMayor = Math.max(...[numero1, numero2])
+                h1.innerHTML = `has introducido los números ${numero1} y ${numero2}. El mayor es ${numeroMayor}`
+
+            }
+
+
+        })
+
+
+
+    </script>
+</body>
+
+</html>

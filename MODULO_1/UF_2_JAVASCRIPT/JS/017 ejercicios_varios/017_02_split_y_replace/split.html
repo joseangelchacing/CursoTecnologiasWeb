@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split y Replace</title>
+    <style>
+        body {
+            background-color: rgb(216, 238, 255);
+            font-size: 1.2rem;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+            border-radius: 5px;
+            display: block;
+            margin-top: 10px;
+            width: 150px;
+            height: 1.6rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Introduce una frase</h1>
+    <form action="">
+        <input type="text" id="frase" style="width: 300px;">
+        <button type="submit">Split</button>
+    </form>
+
+    <ul id="lista">
+
+    </ul>
+
+    <script>
+        let formulario = document.querySelector("form")
+        formulario.addEventListener("submit", function (event) {
+            event.preventDefault();
+            let frase = document.querySelector("#frase").value;
+            let arrayFrase = frase.split(" ");
+            let lista = document.querySelector("#lista");
+            arrayFrase.forEach(palabra => {
+                let eLista = document.createElement("li")
+                eLista.textContent = palabra;
+                lista.appendChild(eLista);
+            });
+        })
+    </script>
+</body>
+
+</html>

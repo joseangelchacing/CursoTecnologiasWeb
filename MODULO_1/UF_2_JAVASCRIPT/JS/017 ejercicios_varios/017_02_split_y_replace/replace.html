@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split y Replace</title>
+    <style>
+        body {
+            background-color: rgb(216, 238, 255);
+            font-size: 1.2rem;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+            border-radius: 5px;
+
+            margin: 20px;
+            width: 150px;
+            height: 1.6rem;
+        }
+
+        input {
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Replace</h1>
+    <form action="">
+        <label for="frase">Tu frase:</label>
+        <input type="text" id="frase" style="width: 300px;">
+        <button type="submit" id="enterButton">Enter</button>
+    </form>
+
+
+
+    <script>
+        let formulario = document.querySelector("form");
+
+        formulario.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            let frase = document.querySelector("#frase").value;
+
+            let newForm = document.createElement("form");
+            newForm.id = "formularioReplace"
+
+            let newH2 = document.createElement("h2");
+            let newLabel = document.createElement("label");
+            let newInput = document.createElement("input");
+            let newLabel2 = document.createElement("label");
+            let newInput2 = document.createElement("input");
+            let newButton = document.createElement("button");
+
+            newButton.type = "submit";
+            newInput.id = "palabraAntigua";
+            newInput2.id = "palabraNueva";
+
+            newH2.textContent = frase;
+            newLabel.textContent = "Palabra que quieres reemplazar:";
+            newLabel2.textContent = "por:";
+            newButton.textContent = "Reemplazar:";
+
+            newForm.appendChild(newH2);
+            newForm.appendChild(newLabel);
+            newForm.appendChild(newInput);
+            newForm.appendChild(newLabel2);
+            newForm.appendChild(newInput2);
+            newForm.appendChild(newButton);
+
+            document.body.appendChild(newForm);
+
+            newForm.addEventListener("submit", function (event) {
+                event.preventDefault();
+                let pAntigua = document.querySelector("#palabraAntigua").value;
+                let pNueva = document.querySelector("#palabraNueva").value;
+
+                let newFrase = frase.replace(pAntigua, pNueva);
+                let newerH2 = document.createElement("h2")
+                newerH2.textContent = newFrase
+                document.body.appendChild(newerH2)
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>

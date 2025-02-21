@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar color</title>
+    <style>
+        #div {
+            width: 100vw;
+            height: 70vh;
+            font-size: 5rem;
+            text-align: center;
+            padding-top: 10vh;
+        }
+
+        button {
+            height: 20vh;
+            width: 100vw;
+            background-color: black;
+            color: white;
+            font-size: 3rem;
+        }
+
+        button:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+            transition: transform 0.2s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div" style="background-color: red;"></div>
+    <button>Cambiar Color</button>
+    <script>
+        function getRandomColor() {
+            return "#" + Math.floor(Math.random() * 16777215).toString(16);
+        }
+
+        let div = document.getElementById("div")
+        let button = document.querySelector("button")
+        console.log(div)
+        console.log(button)
+
+        button.addEventListener("click", function () {
+            let colorDeFondo = getRandomColor();
+            div.style.backgroundColor = colorDeFondo;
+            div.innerHTML = colorDeFondo
+
+        })
+
+    </script>
+</body>
+
+</html>
