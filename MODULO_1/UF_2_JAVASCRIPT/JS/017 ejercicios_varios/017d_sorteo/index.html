@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteo</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            align-items: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: rgb(215, 236, 250);
+        }
+
+
+
+        form {
+            margin-top: 10vh;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            width: 60vw;
+            align-items: center;
+        }
+
+        .card {
+            background-color: rgb(235, 241, 243);
+            box-shadow: 5px 5px 15px;
+            border-radius: 15px;
+        }
+
+        .button {
+            background-color: rgb(120, 217, 105);
+            border-radius: 5px;
+            margin: 5px;
+            width: 150px;
+            height: 1.5rem;
+        }
+
+        .input {
+            border-radius: 5px;
+            width: 160px;
+            ;
+        }
+
+        #infoConcursantes {
+            font-size: 0.8rem;
+        }
+
+        .namesList {
+            margin-top: 10vh;
+            flex-direction: column;
+            padding: 20px;
+            width: 60vw;
+            align-items: center;
+            justify-items: center;
+            background-color: rgb(235, 241, 243);
+            box-shadow: 5px 5px 15px;
+            border-radius: 15px;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease-out, transform 0.2s ease-out;
+            transform: translateY(20vh);
+
+        }
+
+        .listaNombres {
+            display: flex;
+            text-align: center;
+        }
+
+        .div_ganador {
+            margin-top: 5vh;
+            text-align: center;
+            padding: 20px;
+            width: 60vw;
+            background-color: rgb(199, 251, 175);
+            box-shadow: 5px 5px 15px black;
+            border-radius: 15px;
+            display: none;
+            animation: moverGanador 0.5s ease-out forwards;
+        }
+
+        .nombreGanador {
+            color: red;
+            font-size: 2rem;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            transition: 0.3s;
+        }
+
+        @keyframes moverGanador {
+            0% {
+                transform: translateY(-100vh);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes moverListaNombres {
+            0% {
+                transform: translateY(20vh);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex_card">
+        <div class="card">
+            <form action="" onsubmit="sortear(event)">
+                <h1>Sorteo</h1>
+                <label for="nombres">Introduce los nombres de los concursantes</label>
+                <div>
+                    <input class="input" type="text" id="nombres">
+                    <button class="button" type="button" id="addButton">Añadir Concursante</button>
+                </div>
+                <p id="infoConcursantes">(Lista vacía)</p>
+                <button class="button" type="submit" id="sortearButton" disabled>Sortear</button>
+            </form>
+        </div>
+    </div>
+    <div class="div_ganador">
+        <h3>Ganador</h3>
+        <h2 class="nombreGanador"></h2>
+    </div>
+    <div class="namesList">
+        <ul id="listaNombres">
+            <h3>Concursantes</h3>
+        </ul>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
