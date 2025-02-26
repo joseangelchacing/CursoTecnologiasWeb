@@ -20,13 +20,24 @@ form.onsubmit = function (event) {
   let userBD = new Date(document.querySelector("#birth-date").value);
   let isEmailValid;
   let isPhoneValid;
+  let validPhoneStyle;
+  let validEmailStyle;
 
   if (!telefonoRegex.test(userPhone)) {
-    isPhoneValid = "no";
-  } else isPhoneValid = "";
+    isPhoneValid = " inválido";
+    validPhoneStyle = 'style="color:red"';
+  } else {
+    isPhoneValid = "válido";
+    validPhoneStyle = 'style="color:green"';
+  }
+
   if (!emailRegex.test(userEmail)) {
-    isEmailValid = "no";
-  } else isEmailValid = "";
+    isEmailValid = "inválido";
+    validEmailStyle = 'style="color:red"';
+  } else {
+    isEmailValid = "válido";
+    validEmailStyle = 'style="color:green"';
+  }
 
   let actualDate = new Date();
   let actualYear = actualDate.getFullYear();
@@ -53,10 +64,10 @@ form.onsubmit = function (event) {
   resultsDiv.innerHTML = `
         <h2>Datos del usuario</h2>
         <ul>
-            <li>${userName}</li>
-            <li>${userPhone} - Nùmero ${isPhoneValid} es válido</li>
-            <li>${userEmail} - Email ${isEmailValid} es válido</li>
-            <li>${simplerUserBD} - El usuario ${hasLegalAge} es mayor de edad</li>
+            <li>NOMBRE: ${userName.toUpperCase()}</li>
+            <li>TELÉFONO: ${userPhone} - <span ${validPhoneStyle}>(Número ${isPhoneValid})<span></li>
+            <li>EMAIL: ${userEmail.toUpperCase()} - <span ${validEmailStyle}>(Email ${isEmailValid})<span></li>
+            <li>FECHA NAC: ${simplerUserBD} - (Usuario ${hasLegalAge} es mayor de edad)</li>
            
         </ul>
    `;

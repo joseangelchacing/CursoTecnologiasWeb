@@ -6,7 +6,7 @@
  #container {
      margin-top: 10vh;
      margin-inline: auto;
-     min-width: 350px;
+     min-width: 400px;
      width: 20vw;
      background-color: white;
      padding: 20px;
@@ -59,7 +59,7 @@
  .results-div {
     margin-top: 10vh;
         margin-inline: auto;
-        min-width: 350px;
+        min-width: 400px;
         width: 20vw;
         background-color: white;
         padding: 20px;
