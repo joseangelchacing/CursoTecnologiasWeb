@@ -1,0 +1,55 @@
+ body {
+     margin-left: auto;
+     background-color: rgb(233, 242, 249);
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+ }
+
+ .card {
+     margin-inline: auto;
+     margin-top: 50px;
+     background-color: rgb(255, 255, 255);
+     padding: 20px;
+     min-width: 385px;
+     width: 35vw;
+     border-radius: 15px;
+     box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+ }
+
+ li {
+     display: flex;
+     justify-content: space-between;
+     line-height: 26px;
+
+
+ }
+
+ button {
+     border-radius: 5px;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     padding: 5px;
+ }
+
+ button:hover {
+     transform: scale(1.03);
+     transition: 0.5s;
+ }
+
+ .add-task-button {
+     margin-left: 10px;
+    
+     background-color: rgb(97, 205, 39);
+     color: white;
+ }
+
+ li>button {
+     background-color: rgb(221, 37, 37);
+     color: white;
+     margin: 5px;
+     width: 40px;
+     text-align: center;
+ }
+
+ .delete-all-button {
+     display: none;
+ }

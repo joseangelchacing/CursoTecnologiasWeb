@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación Formulario</title>
+    <style>
+        body {
+            background-color: rgb(238, 243, 245);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #container {
+            margin-top: 10vh;
+            margin-inline: auto;
+            min-width: 350px;
+            width: 20vw;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label,
+        input {
+            margin: 5px;
+            height: 1rem;
+        }
+
+        input,
+        textarea {
+            width: 200px;
+            height: 1rem;
+            /* Hace que textarea tenga la misma altura que los inputs */
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid black;
+            border-radius: 4px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        button {
+            background-color: rgb(39, 170, 59);
+            color: white;
+        }
+
+        button {
+            width: 140px;
+            height: 2rem;
+            margin-top: 1rem;
+            border-radius: 6px;
+            border: 1px black solid;
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            transform: scale(1.02);
+            transition: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1 style="text-align: center;">Formulario</h1>
+        <div id="form-container">
+            <form action="" id="form-card">
+                <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Name">
+                </div>
+                <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" placeholder="+34123456789">
+                </div>
+                <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Email@example.com">
+                </div>
+                <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <label for="birth-date">Birth Date</label>
+                    <input type="date" id="birth-date">
+                </div>
+                <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <label for="text">Comentarios</label>
+                    <textarea type="text" name="name" id="comments" placeholder="Comments"></textarea>
+
+                </div>
+                <div style="text-align: center;"><button type="submit" id="submit-button">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

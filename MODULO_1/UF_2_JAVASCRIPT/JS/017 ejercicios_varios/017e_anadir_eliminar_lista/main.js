@@ -5,9 +5,10 @@ let counter = 0; //Variable contador inicilizada en cero.
 let deleteAllBtn = document.querySelector("#delete-all-button");
 addInput.focus();
 
-if (addInput.value !== "") {
-}
-addButton.removeAttribute("disabled");
+//Si el input esta vacío, el boton de Añadir Tarea estará disabled.
+addInput.addEventListener("input", () => {
+  addButton.disabled = addInput.value.length === 0;
+});
 
 addButton.addEventListener("click", addTask); //Evento click llamará a función que añade cada tarea.
 
@@ -26,23 +27,35 @@ function addTask() {
   newDeleteButton.textContent = "X";
   newDeleteButton.classList.add("delete-button");
 
+  //Añadimos boton de borrar todos cuando hayan al menos dos list items.
+  if (counter === 2) deleteAllBtn.classList.remove("delete-all-button");
+
   //Agregamos la tarea y su boton al elemento ul. (tarea y botón hijos de ul).
   list.appendChild(newListItem).appendChild(newDeleteButton);
-  addInput.value = ""; //Vaciamos el input.
   addInput.focus(); //Focus en el input.
+  addInput.value = ""; //Vaciamos el input.
+  addButton.disabled = true;
+
   let buttonsArray = document.querySelectorAll(".delete-button");
+
+  //For each en el array de botones para eliminar su padre (il)
   buttonsArray.forEach((element) => {
     element.onclick = function () {
-      element.parentNode.remove(element);
+      element.parentNode.remove(element); //Elimina su padre con cada click
+      counter--; //Bajamos el contador
+      if (counter < 2) deleteAllBtn.classList.add("delete-all-button"); //Cuando haya menos de 2 botones quitamos el botton de Borrar Todos
       addInput.focus();
     };
   });
 }
 
+//Evento del botón "Borrar Todo"
 deleteAllBtn.addEventListener("click", () => {
-  let tasksArray = document.querySelectorAll("li");
+  let tasksArray = document.querySelectorAll("li"); //Pbtenemos array de tareas (items list).
+  deleteAllBtn.classList.add("delete-all-button"); //Añadimos al botón clase con Display:none.
+  counter = 0; //Levamos el contador a 0
   tasksArray.forEach((task) => {
-    task.remove();
+    task.remove(); //Borramos cada tearea.
     addInput.focus();
   });
 });
