@@ -31,7 +31,7 @@ form.onsubmit = function (event) {
   } else {
     //Si el teléfono es inválido
     isPhoneValid = "válido";
-    validPhoneStyle = 'style="color:green"';
+    validPhoneStyle = 'style="color: rgb(6, 189, 6)"';
   }
 
   //Si el email es válido
@@ -41,7 +41,7 @@ form.onsubmit = function (event) {
   } else {
     //Si el email es inválido
     isEmailValid = "válido";
-    validEmailStyle = 'style="color:green"';
+    validEmailStyle = 'style="color: rgb(6, 189, 6)"';
   }
 
   let actualDate = new Date();
@@ -63,7 +63,7 @@ form.onsubmit = function (event) {
     (userAge === 18 && userBdMonth === actualMonth && userBdDay >= actualDay)
   ) {
     hasLegalAge = "Mayor de edad";
-    isLegalStyle = 'style="color:green"';
+    isLegalStyle = 'style="color: rgb(6, 189, 6)"';
   } else {
     hasLegalAge = "Menor de edad";
     isLegalStyle = 'style="color:red"';
