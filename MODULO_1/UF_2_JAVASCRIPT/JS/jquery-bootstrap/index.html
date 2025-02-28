@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Jquery - bootstrap</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Registrar</h2>
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-primary" style="margin-top: 20px;" data-toggle="modal"
+            data-target="#myModal">
+            Open modal
+        </button>
+
+        <ul id="datosUsuario" style="margin-top: 20px;"></ul>
+
+        <!-- The Modal -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Registro Usuario</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form action="" id="form">
+                            <div class="form-group">
+                                <label for="name">Nombre</label>
+                                <input type="text" class="form-control" id="nombreUsuario" placeholder="Enter name"
+                                    name="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="emaill">Email:</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter email"
+                                    name="email">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        let form = $('#form');
+        let nombre = $('#nombreUsuario');
+        let email = $('#email');
+        let datosUsuario = $("#datosUsuario")
+
+        form.submit(function (e) {
+            e.preventDefault();
+            let nombreVal = nombre.val();
+            let emailVal = email.val();
+
+            datosUsuario.html(`
+                <li><strong>Nombre:</strong> ${nombreVal}</li>
+                <li><strong>Email:</strong> ${emailVal}</li>
+            `);
+
+            $('#myModal').modal('hide');
+        })
+    </script>
+</body>
+
+</html>
