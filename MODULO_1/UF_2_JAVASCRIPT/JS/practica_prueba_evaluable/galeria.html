@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 008</title>
+    <style>
+        body {
+            background-color: rgb(127, 134, 159);
+        }
+
+        .galeria {
+            margin: auto;
+            padding: 40px;
+            background-color: rgb(142, 140, 168);
+            display: flex;
+            width: 80%;
+            min-width: 340px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 25px;
+        }
+
+        .galeria img {
+            width: 240px;
+            margin: 20px;
+            border-radius: 15px;
+            padding: 0px;
+            background-color: white;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .galeria img:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .galeria {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="galeria">
+        <img src="images/imagen.jpg" alt="">
+        <img src="images/imagen.jpg" alt="">
+        <img src="images/imagen.jpg" alt="">
+        <img src="images/imagen.jpg" alt="">
+        <img src="images/imagen.jpg" alt="">
+        <img src="images/imagen.jpg" alt="">
+
+
+    </div>
+</body>
+
+</html>

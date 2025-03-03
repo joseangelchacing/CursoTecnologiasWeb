@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header_container">
+            <div>
+                <img src="images/football-157930_640.png" alt="football" class="page_logo">
+                <h3 style="display: inline; font-size: 1.2rem;"><a href="index.html"
+                        style="text-decoration: none; color: black;">MyPage</a></h3>
+            </div>
+        </div>
+        <h1 class="titulo_page">Home Page</h1>
+    </header>
+    <nav class="navbar">
+        <a href="index.html" style="color: red;">Home</a>
+        <a href="contacto.html">Contact</a>
+        <a href="galeria.html">Galería</a>
+    </nav>
+    <main class="main_contact">
+        <form class="formulario" action="index.html">
+            <h2>Add Contact</h2>
+
+            <div>
+                <label for="userName">User Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+
+
+            <div>
+                <label for="date">Birth Date</label>
+                <input type="date" id="birthDate" name="birthDate" required>
+            </div>
+
+            <div>
+                <label for="select-education-level">Formation Level</label>
+                <select name="education-level" id="select-education-level">
+                    <option value="Bbchillerato">Bachillerato</option>
+                    <option value="tituloUniversitario">Título Universitario</option>
+                    <option value="tenico">Técnico</option>
+                </select>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+    <footer>
+        JoseAngel &copy; 2025
+    </footer>
+</body>
+
+</html>
